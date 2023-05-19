@@ -26,11 +26,11 @@ int main(void)
 				{
 					if (((comb + comb2) != (comb3 + comb4)))
 					{
-						putchar(comb3 + '0');
-						putchar(comb4 + '0');
-						putchar(' ');
 						putchar(comb + '0');
 						putchar(comb2 + '0');
+						putchar(' ');
+						putchar(comb3 + '0');
+						putchar(comb4 + '0');
 						if ((comb != 9) || (comb2 != 8) || (comb3 != 9) || (comb4 != 9))
 						{
 							putchar(',');
