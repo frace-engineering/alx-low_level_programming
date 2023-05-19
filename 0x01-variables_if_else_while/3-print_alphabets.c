@@ -11,17 +11,18 @@ int main(void)
 	char ALPHA;
 
 	alpha = 'a';
-	while(alpha <= 'z')
+	while (alpha <= 'z')
 	{
 		putchar(alpha);
 		alpha++;
 	}
 	ALPHA = 'A';
-	while(ALPHA <= 'Z')
+	while (ALPHA <= 'Z')
 	{
 		putchar(ALPHA);
 		ALPHA++;
 	}
 
 	putchar('\n');
+	return (0);
 }

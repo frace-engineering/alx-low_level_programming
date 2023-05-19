@@ -10,10 +10,11 @@ int main(void)
 	int f;
 
 	f = 0;
-	while(f < 10)
+	while (f < 10)
 	{
 		printf("%d", f);
 		f++;
 	}
 	printf("\n");
+	return (0);
 }

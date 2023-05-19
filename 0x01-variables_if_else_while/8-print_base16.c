@@ -7,18 +7,17 @@
  */
 int main(void)
 {
-	
 	int hex;
 	char c;
 
 	c = 'a';
 	hex = 0;
-	while(hex < 10)
+	while (hex < 10)
 	{
 		putchar(hex + '0');
 		hex++;
 	}
-	while(c <= 'f')
+	while (c <= 'f')
 	{
 		putchar(c);
 		c++;
