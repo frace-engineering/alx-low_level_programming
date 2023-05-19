@@ -21,7 +21,7 @@ int main(void)
 			while (comb3 < 10)
 			{
 				if ((comb < comb2) && (comb2 < comb3))
-				{	
+				{
 					putchar(comb + '0');
 					putchar(comb2 + '0');
 					putchar(comb3 + '0');
@@ -30,10 +30,10 @@ int main(void)
 						putchar(',');
 						putchar(' ');
 					}
-				 }
-				comb3++;
-			 }
-			comb2++;
+				}
+				 comb3++;
+			}
+			 comb2++;
 		}
 		comb++;
 	}
