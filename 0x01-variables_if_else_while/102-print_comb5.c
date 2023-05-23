@@ -16,15 +16,15 @@ int main(void)
 	while (comb < 10)
 	{
 		comb2 = 0;
-		while (comb2 < 10)
+		while (comb2 < 9)
 		{
 			comb3 = 0;
 			while (comb3 < 10)
 			{
-				comb4 = 1;
+				comb4 = 0;
 				while (comb4 < 10)
 				{
-					if (((comb + comb2) != (comb3 + comb4)))
+					if ((comb & comb2) < (comb3 & comb4))
 					{
 						putchar(comb + '0');
 						putchar(comb2 + '0');
