@@ -2,7 +2,7 @@
 #include "main.h"
 
 /**
- * times_table - print 9 times table.
+ * print_times_table - print 9 times table.
  *
  * @n: input number.
  */
@@ -13,8 +13,8 @@ void print_times_table(int n)
 	if (n > 15 || n < 0)
 		;
 	else
-	{		
-		for(a = 0; a <= n; a++)
+	{
+		for (a = 0; a <= n; a++)
 		{
 			_putchar('0');
 			for (b = 1; b <= n; b++)
@@ -26,7 +26,7 @@ void print_times_table(int n)
 				if (times > 9)
 				{
 					_putchar((times / 10) + '0');
-					_putchar((times % 10 )+ '0');
+					_putchar((times % 10) + '0');
 				}
 				else
 				{
