@@ -12,7 +12,6 @@ void print_times_table(int n)
 
 	if (n > 15 || n < 0)
 		return;
-	else
 	{
 		for (a = 0; a <= n; a++)
 		{
@@ -35,9 +34,12 @@ void print_times_table(int n)
 					_putchar((times / 10) + '0');
 					_putchar((times % 10) + '0');
 				}
+				else if (times < 10)
+				{
 					_putchar(' ');
 					_putchar(' ');
 					_putchar(times + '0');
+				}
 			}
 			_putchar('\n');
 		}
