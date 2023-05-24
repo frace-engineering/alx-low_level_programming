@@ -1,6 +1,11 @@
 #include <stdio.h>
 #include "main.h"
 
+/**
+ * print_to_98 - prints numbers from input number to 98
+ *
+ * @n: input number.
+ */
 void print_to_98(int n)
 {
 	if (n <= 0)
@@ -32,5 +37,4 @@ void print_to_98(int n)
 	else if (n == 98)
 		printf("%d", 98);
 	printf("\n");
-	return;
 }
