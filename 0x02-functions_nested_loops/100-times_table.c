@@ -35,9 +35,9 @@ void print_times_table(int n)
 					_putchar((times / 10) + '0');
 					_putchar((times % 10) + '0');
 				}
-				_putchar(' ');
-				_putchar(' ');
-				_putchar(times + '0');
+					_putchar(' ');
+					_putchar(' ');
+					_putchar(times + '0');
 			}
 			_putchar('\n');
 		}
