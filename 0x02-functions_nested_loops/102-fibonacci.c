@@ -14,7 +14,7 @@ int main(void)
 	printf("%ld, %ld, ", fib1, fib2);
 	fib = 0;
 	temp = 0;
-	for (i = 0; i < 48; i++)
+	for (i = 0; i < 47; i++)
 	{
 		fib = fib1 + fib2;
 		printf("%ld, ", fib);
@@ -22,7 +22,7 @@ int main(void)
 		fib2 = fib;
 		fib1 = temp;
 	}
-	printf("\n");
+	printf("%ld\n", fib1 + fib2);
 	return (0);
 }
 
