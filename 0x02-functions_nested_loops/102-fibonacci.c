@@ -6,21 +6,22 @@
  */
 int main(void)
 {
-	int fib1, fib2, i, temp, fib;
+	long int fib1, fib2, temp, fib;
+	int i;
 
 	fib1 = 1;
 	fib2 = 2;
-	printf("%d, %d, ", fib1, fib2);
+	printf("%ld, %ld, ", fib1, fib2);
 	fib = 0;
-	for (i = 0; i < 50; i++)
+	temp = 0;
+	for (i = 0; i < 48; i++)
 	{
 		fib = fib1 + fib2;
-		printf("%d, ", fib);
+		printf("%ld, ", fib);
 		temp = fib2;
 		fib2 = fib;
 		fib1 = temp;
 	}
-	printf("%d", fib);
 	printf("\n");
 	return (0);
 }

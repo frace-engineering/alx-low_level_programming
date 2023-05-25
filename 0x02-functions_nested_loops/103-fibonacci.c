@@ -6,8 +6,8 @@
  */
 int main(void)
 {
-	int fib1, fib2, i, temp, fib;
-	int sum;
+	long int fib1, fib2, temp, fib;
+	long int sum;
 
 	fib1 = 1;
 	fib2 = 2;
@@ -24,8 +24,7 @@ int main(void)
 			sum += fib;
 		}
 	}
-	printf("%d\n", sum);
-	printf("%d\n", fib);
+	printf("%ld\n", sum);
 	return (0);
 }
 
