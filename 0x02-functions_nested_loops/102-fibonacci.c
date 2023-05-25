@@ -1,7 +1,9 @@
 #include <stdio.h>
 
-
-
+/**
+ * main - Entry point
+ * Return: Always 0 (Success)
+ */
 int main(void)
 {
 	int fib1, fib2, i, temp, fib;
