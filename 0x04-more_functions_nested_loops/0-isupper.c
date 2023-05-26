@@ -8,9 +8,9 @@
  *
  * Return: Always 0 (Success).
  */
-int _isupper(char c)
+int _isupper(int c)
 {
-	if ((67 <= c) || (c <= 122))
+	if ((67 >= c) && (c <= 122))
 	{
 		return (1);
 	}
