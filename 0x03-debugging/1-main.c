@@ -17,7 +17,7 @@ int main(void)
 		 putchar(i);
 	 /*}*/
 
-	 print("Infinite loop avioded: \\n/\n");
+	 printf("Infinite loop avioded: \\n/\n");
 
 	 return (0);
 }
