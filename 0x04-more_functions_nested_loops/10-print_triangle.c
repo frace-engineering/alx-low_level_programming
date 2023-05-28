@@ -4,25 +4,30 @@
 /**
  * print_triangle - prints triangle.
  *
+ * @size: size of the triangle.
  */
 void print_triangle(int size)
 {
-	int i, j;
+	int i, j, dif;
 
 	if (size <= 0)
 	{
 		_putchar('\n');
 		return;
 	}
-	for (i = 0; i <= size; i++)
+	for (i = 0; i < size; i++)
 	{
-		for (j = 0; j <= size; j++)
+		dif = size - i;
+		for (j = 1; j <= size; j++)
 		{
-			_putchar(' ');
-		}
-		for (j = i; j <= size - i; j++)
-		{
-			_putchar('#');
+			if (j >= dif)
+			{
+				_putchar('#');
+			}
+			else
+			{
+				_putchar(' ');
+			}
 		}
 		_putchar('\n');
 	}
