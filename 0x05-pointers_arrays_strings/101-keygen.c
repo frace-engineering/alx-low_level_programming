@@ -15,6 +15,7 @@ int main(void)
 	int length;
 	int i;
 	char *upper, *lower, *digit, *symbol;
+	int digit_length, upper_length, lower_length, symbol_length, char_type;
 
 	length = 6;
 	password = malloc(sizeof(char) * 6);
@@ -24,19 +25,19 @@ int main(void)
 	       return (-1);
 	}
 	upper = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
-       	int upper_length = strlen(upper);
+       	upper_length = strlen(upper);
 
 	lower = "abcdefghijklmnopqrstuvwxyz";
-	int lower_length = strlen(lower);
+	lower_length = strlen(lower);
 
 	digit = "0123456789";
-	int digit_length = strlen(digit);
+	digit_length = strlen(digit);
 
 	symbol = "@!$%^&*";
-	int symbol_length = strlen(symbol);
+	symbol_length = strlen(symbol);
 
 	srand(time(0) * getpid());
-	int char_type = rand() % 4;
+	char_type = rand() % 4;
 
 	for (i = 0; i < length; i++)
 	{
