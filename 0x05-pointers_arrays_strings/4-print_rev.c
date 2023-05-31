@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <string.h>
 #include "main.h"
+#include <stddef.h>
 
 
 /**
@@ -10,7 +11,7 @@
 void print_rev(char *s)
 {
 	int i;
-	int string_len;
+	size_t string_len;
 
 	i = 0;
 	string_len = 0;

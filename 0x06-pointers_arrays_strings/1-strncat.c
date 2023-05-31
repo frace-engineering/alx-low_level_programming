@@ -3,7 +3,7 @@
 
 
 /**
- * _strncat - concatenates strings up to nth character 
+ * _strncat - concatenates strings up to nth character
  * @dest: destination string
  * @src: source string
  * @n: number of characters to be copied int dest
