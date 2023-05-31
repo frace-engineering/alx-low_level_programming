@@ -17,7 +17,7 @@ char *_strcat(char *dest, char *src)
 	{
 		count += 1;
 	}
-	printf("%d\n", count);
+	count = count - 1;
 	for (j = 0; src[j] != '\0'; j++)
 	{
 		dest[count + j] = src[j];
