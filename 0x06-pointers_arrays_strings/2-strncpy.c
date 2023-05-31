@@ -4,7 +4,7 @@
 
 
 /**
- * _strncpy - copies strings up to nth character 
+ * _strncpy - copies strings up to nth character
  * @dest: destination buffer
  * @src: source string
  * @n: number of characters to be copied int dest
@@ -19,9 +19,6 @@ char *_strncpy(char *dest, char *src, int n)
 		dest[j] = src[j];
 	}
 	for (; j < n; n++)
-	{
 		dest[j] = '\0';
-	}
-
 	return (dest);
 }
