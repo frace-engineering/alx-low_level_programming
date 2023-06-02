@@ -4,9 +4,9 @@
 
 
 /**
- * rot13 - encodes strings using rot13
+ * _strlen - calculate length of string
  * @str: string
- * Return: pointer to str
+ * Return: pointer to len
  */
 int _strlen(char *str)
 {
@@ -21,6 +21,11 @@ int _strlen(char *str)
 	return (len);
 }
 
+/**
+ * rot13 - encodes strings using rot13
+ * @str: string
+ * Return: pointer to str
+ */
 char *rot13(char *str)
 {
 	char letter;
