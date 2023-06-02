@@ -25,6 +25,5 @@ void print_rev(char *s)
 		_putchar(s[string_len]);
 		string_len--;
 	}
-	_putchar('\0');
 	_putchar('\n');
 }

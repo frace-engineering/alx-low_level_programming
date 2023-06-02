@@ -9,21 +9,25 @@
  */
 char *cap_string(char *str)
 {
-	char sep[] = {'.', ' ', '\t', '\n', ',', ';', '!', '?', '"', '(', ')', '{', '}'};
+	char sep[13] = {'.', ' ', '\t', '\n', ',', ';', '!', '?', '"', '(', ')', '{', '}'};
 	int i, j;
 	char up;
 
 	i = 0;
 	while (str[i] != '\0')
 	{
-		for (j = 0; sep[j] != '\0'; j++)
+		for (j = 0; j < 13; j++)
 		{
-			for (up = 'a'; up <= 'z'; up++)
+			while (sep[j])
 			{
-				if (str[i] == up)
+				for (up = 'a'; up <= 'z'; up++)
 				{
-					str[i] = up - 32;
+					if (str[i] == up)
+					{
+						str[i] = up - 32;
+					}
 				}
+				j++;
 			}
 		}
 		i++;
