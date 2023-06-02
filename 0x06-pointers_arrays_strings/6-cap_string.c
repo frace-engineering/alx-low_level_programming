@@ -11,23 +11,15 @@ char *cap_string(char *str)
 {
 	char sep[13] = {'.', ' ', '\t', '\n', ',', ';', '!', '?', '"', '(', ')', '{', '}'};
 	int i, j;
-	char up;
 
-	i = 0;
+	i = 1;
 	while (str[i] != '\0')
 	{
 		for (j = 0; j < 13; j++)
 		{
-			while (sep[j])
+			if ((str[i - 1] == sep[j]) && (str[i] >= 'a' && str[i] <= 'z'))
 			{
-				for (up = 'a'; up <= 'z'; up++)
-				{
-					if (str[i] == up)
-					{
-						str[i] = up - 32;
-					}
-				}
-				j++;
+				str[i] = str[i] - 32;
 			}
 		}
 		i++;
