@@ -33,7 +33,7 @@ char *rot13(char *str)
 	for (i = 0; i < length; i++)
 	{
 		letter = str[i];
-		if ((letter >= 65 && letter <= 90) || (letter >=97 && letter <= 122))
+		if ((letter >= 65 && letter <= 90) || (letter >= 97 && letter <= 122))
 		{
 			str[i] += 13;
 		}
