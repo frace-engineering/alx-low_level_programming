@@ -20,6 +20,7 @@ void print_rev(char *s)
 		string_len += 1;
 		i++;
 	}
+	string_len -= 1;
 	while (string_len >= 0)
 	{
 		_putchar(s[string_len]);
