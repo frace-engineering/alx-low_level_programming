@@ -4,7 +4,7 @@
 
 
 /**
- * strchr - locates a character in a string
+ * _strchr - locates a character in a string
  * @s: the input string
  * @c: character to be searched for
  * Return: pointer to the first occurance of c
@@ -44,5 +44,5 @@ unsigned int _strspn(char *s, char *accept)
 		len += 1;
 		p++;
 	}
-	return len;
+	return (len);
 }

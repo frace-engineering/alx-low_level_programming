@@ -4,7 +4,7 @@
 
 
 /**
- * strpbrk - searches a string for any set of bytes
+ * _strpbrk - searches a string for any set of bytes
  * @s: the input string
  * @accept: bytes to be searched for
  * Return: pointer to the first occurance of byte
@@ -19,7 +19,7 @@ char *_strpbrk(char *s, char *accept)
 		if (*p != *accept)
 		{
 			while (*accept != *p)
-			{	
+			{
 				accept++;
 			}
 		}
@@ -29,5 +29,3 @@ char *_strpbrk(char *s, char *accept)
 	}
 	return (0);
 }
-
-
