@@ -13,6 +13,8 @@ char *_strchr(char *s, char c)
 {
 	char *p;
 
+	if (s == NULL)
+		return (NULL);
 	p = s;
 	while (*p)
 	{
