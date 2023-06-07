@@ -14,10 +14,10 @@ char *_strchr(char *s, char c)
 	char *p;
 
 	p = s;
-	while (p != NULL)
+	while (*p != c)
 	{
-		if (*p == c)
-			return (p);
+		if (*p == '\0')
+			return (NULL);
 		p++;
 	}
 	return (p);
@@ -34,10 +34,16 @@ unsigned int _strspn(char *s, char *accept)
 	char *p;
 
 	len = 0;
+	p = s;
 	while (*s != '\0')
 	{
-		p = _strchr(s, *accept);
-		s++;
+		while (*accept != *p) 
+		{
+			if (*accept == '\0')
+				return (0);
+			accept++;
+		}
+		s++;		
 	}
 	while (*p != '\0')
 	{
