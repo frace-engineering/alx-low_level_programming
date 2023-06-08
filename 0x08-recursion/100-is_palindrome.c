@@ -16,11 +16,11 @@ int is_palindrome(char *s)
 	len = _strlen_recursion(s);
 	if (!len / 2)
 		return (0);
-	if (s[i] != s[len -i - 1])
+	if (s[i] != s[len - i - 1])
 	{
 		return (0);
 	}
-	if (s[i] == s[len -i - 1])
+	if (s[i] == s[len - i - 1])
 	{
 		return (1);
 	}
