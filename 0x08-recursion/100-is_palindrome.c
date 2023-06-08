@@ -9,22 +9,34 @@
  */
 int is_palindrome(char *s)
 {
-	int i, n, len;
+	int len;
+	int i;
 
-	len = 0;
-	for (n = 0; s[n] != '\0'; n++)
-		len += 1;
-
-	for (i = 0; i < len / 2; i++)
+	i = 0;
+	len = _strlen_recursion(s);
+	if (!len / 2)
+		return (0);
+	if (s[i] != s[len -i - 1])
 	{
-		if (s[i] == s[len - i -1] || s == NULL)
-		{
-			n = 1;
-		}
-		else
-		{
-			n = 0;
-		}
+		return (0);
 	}
-	return (n);
+	if (s[i] == s[len -i - 1])
+	{
+		return (1);
+	}
+	i++;
+	return (is_palindrome(s + 1));
+}
+
+
+/**
+ * _strlen_recursion - returns the length of a srting
+ * @s: pointer to a string
+ * Return: length of string
+ */
+int _strlen_recursion(char *s)
+{
+	if (*s != '\0')
+		return (1 + _strlen_recursion(s + 1));
+	return (0);
 }
