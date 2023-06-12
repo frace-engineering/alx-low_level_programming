@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <ctype.h>
+#include <string.h>
 
 
 /**
@@ -11,30 +12,31 @@
  */
 int main(int argc, char *argv[])
 {
-	int i, j, sum;
+	int i, j, sum = 0;
+	size_t n;
 
 	if (argc <= 1)
 	{
 		printf("%d\n", 0);
 		return (0);
 	}
-	else if (argc > 1)
-	{
 	for (j = 1; j < argc; j++)
 	{
-		if (!(atoi(argv[j])))
+		n = 0;
+		while (n < strlen(argv[j]))
 		{
-			printf("Error\n");
-			return (1);
+			if ((argv[j][n] < 48) || (argv[j][n] > 57))
+			{
+				printf("Error\n");
+				return (1);
+			}
+			n++;
 		}
 	}
-
-	sum = 0;
 	for (i = 0; i < argc; i++)
 	{
 		if (atoi(argv[i]) > 0)
 			sum += atoi(argv[i]);
-	}
 	}
 	printf("%d\n", sum);
 	exit(EXIT_SUCCESS);
