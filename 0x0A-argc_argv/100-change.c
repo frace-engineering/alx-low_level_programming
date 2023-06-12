@@ -12,21 +12,18 @@
 int change(int cent)
 {
 	int coin[5] = {25, 10, 5, 2, 1};
-	int i, j = 0;
-	int coinlist[5] = {0};
+	int i;
+	int count = 0;
 
 	for (i = 0; i < 5; i++)
 	{
 		while (cent >= coin[i])
 		{
 			cent -= coin[i];
-			coinlist[j++] = coin[i];
+			count++;
 		}
 	}
-	for (i = 0; i < j; i++)
-	{
-		printf("%d ", coinlist[i]);
-	}
+	printf("%d", count);
 	printf("\n");
 	exit(EXIT_SUCCESS);
 }
@@ -45,7 +42,8 @@ int main(int argc, char *argv[])
 	}
 	if (atoi(argv[1]) <= 0)
 	{
-		printf("%d", 0);
+		printf("%d\n", 0);
+		return (0);
 	}
 	change(atoi(argv[1]));
 	exit(EXIT_SUCCESS);
