@@ -32,9 +32,9 @@ char *str_concat(char *s1, char *s2)
 	int string_len1, string_len2;
 
 	if (s1 == NULL)
-		string_len1 = 0;
+		s1 = "";
 	if (s2 == NULL)
-		string_len2 = 0;
+		s2 = "";
 	string_len1 = _strlen(s1);
 	string_len2 = _strlen(s2);
 
@@ -46,7 +46,6 @@ char *str_concat(char *s1, char *s2)
 	{
 		ptr[i] = s1[i];
 	}
-	i++;
 	for (i = string_len1; i < string_len; i++)
 	{
 		ptr[i] = *s2++;
