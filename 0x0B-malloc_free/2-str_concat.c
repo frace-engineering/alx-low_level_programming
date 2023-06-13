@@ -18,9 +18,9 @@ int _strlen(char *s)
 }
 
 /**
- * _strdup - returns a pointer to a newly allocated memory, which
- * contains a copy of the string given as a parameter
- * @str: pointer to given string
+ * str_concat - concatenates two strings
+ * @s1: pointer to 1st string
+ * @s2: pointer to 2nd string
  *
  * Return: pointer to the duplicate copy
  */
@@ -39,7 +39,7 @@ char *str_concat(char *s1, char *s2)
 	string_len2 = _strlen(s2);
 
 	string_len = string_len1 + string_len2;
-	ptr = malloc(sizeof(char) * string_len);
+	ptr = malloc(sizeof(char) * string_len + 1);
 	if (ptr == NULL)
 		return (NULL);
 	for (i = 0; s1[i] != '\0'; i++)
