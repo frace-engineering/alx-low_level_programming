@@ -25,24 +25,27 @@ unsigned int _strlen(char *s)
  */
 char *string_nconcat(char *s1, char *s2, unsigned int n)
 {
-	unsigned int total;
-	unsigned int i, j;
+	unsigned int i, j, s, k;
 	char *ptr;
 
+	s = k = 0;
 	if (s1 == NULL)
+	{
 		s1 = "";
+	}
 	if (s2 == NULL)
+	{
 		s2 = "";
-
-	total = _strlen(s1) + _strlen(s2);
-	ptr = malloc(sizeof(*ptr) * (total - 1));
+	}
+	s = _strlen(s1);
+	k = _strlen(s2);
+	ptr = malloc(sizeof(char) * (s + k));
 	if (ptr == NULL)
 		return (NULL);
-
 	for (i = 0; s1[i] != '\0'; i++)
 		ptr[i] = s1[i];
 	for (j = 0; ((j < n) && (s2[j] != '\0')); j++)
 		ptr[i + j] = s2[j];
-	ptr[i + j] = '\0';
+	ptr[i + j++] = '\0';
 	return (ptr);
 }
