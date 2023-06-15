@@ -22,7 +22,7 @@ char *argstostr(int ac, char **av)
 		string_len = strlen(av[i]);
 		total_len += string_len;
 	}
-	concatenated = malloc(sizeof(char) * total_len + 1);
+	concatenated = malloc(sizeof(*concatenated) * total_len + 1);
 	if (concatenated == NULL)
 		return (NULL);
 	ptr = concatenated;
@@ -33,7 +33,7 @@ char *argstostr(int ac, char **av)
 		{
 			*ptr = av[i][j];
 			printf("%c", *ptr);
-			ptr++; 
+			ptr++;
 		}
 		printf("\n");
 	}
