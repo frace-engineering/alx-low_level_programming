@@ -6,7 +6,7 @@
 
 /**
  * _calloc - allocates memory for an array using calloc
- * @:nmemb: array members
+ * @nmemb: array members
  * @size: size of the array
  * Return: pointer to the array
  */
