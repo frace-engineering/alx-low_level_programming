@@ -2,10 +2,10 @@
 #include <stdlib.h>
 
 
-
 /*
- * main - entry point
- * Return: 0 (Success)
+ * main - Entry point
+ *
+ * Exit: EXIT_SUCCESS
  */
 int main(void)
 {
