@@ -15,11 +15,11 @@ dog_t *new_dog(char *name, float age, char *owner)
 	dog_t new_dog;
 	dog_t *ptr = &new_dog;
 
-	(void)age;
 	ptr = malloc(sizeof(dog_t) + 1);
 	if (ptr == NULL)
 		return (NULL);
 	ptr->name = name;
+	ptr->age = age;
 	ptr->owner = owner;
 
 	return (ptr);
