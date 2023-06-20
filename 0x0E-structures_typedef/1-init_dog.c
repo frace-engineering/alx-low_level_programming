@@ -5,10 +5,11 @@
 
 /**
  * init_dog - initialize struct of type dog
+ * @struct dog - Structure with 3 members
  * @d: struct type
- * @name: name
- * @age: age
- * @owner: owner
+ * @name: first name
+ * @owner: second member
+ * @age: third member
  */
 void init_dog(struct dog *d, char *name, float age, char *owner)
 {
