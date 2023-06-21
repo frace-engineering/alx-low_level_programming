@@ -19,16 +19,13 @@ int (*get_op_func(char *s))(int, int)
 	};
 	int i;
 
-	if (s != "+" || s != "-" || s != "*" || s != "/" || s != "%")
-	{
-		return (NULL);
-	}
 	i = 0;
-	while (ops[i] == s)
+	while (i < 5)
 	{
-		get_op_func = ops[i];
+		if(ops[i].op[0] == s[0])
+			return (ops[i].f);
 		i++;
 	}
-	return (0);
+	return ('\0');
 }
 
