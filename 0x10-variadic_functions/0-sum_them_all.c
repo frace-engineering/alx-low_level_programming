@@ -20,9 +20,10 @@ int sum_them_all(const unsigned int n, ...)
 		return (0);
 	}
 
+	sum = 0;
+
 	va_start(ptr, n);
 
-	sum = 0;
 	for (i = 0; i < n; i++)
 	{
 		sum += va_arg(ptr, int);
