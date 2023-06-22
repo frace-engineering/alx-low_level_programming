@@ -3,6 +3,7 @@
 #include "variadic_functions.h"
 
 
+
 /**
  * sum_them_all - returns the sum of all the parameters
  * @n: integer number
@@ -15,7 +16,9 @@ int sum_them_all(const unsigned int n, ...)
         int sum;
        
 	if (n == 0)
+	{
 		return (0);
+	}
 
 	va_start(ptr, n);
 
@@ -25,5 +28,6 @@ int sum_them_all(const unsigned int n, ...)
 		sum += va_arg(ptr, int);
 	}
 	va_end(ptr);
+
 	return (sum);
 }
