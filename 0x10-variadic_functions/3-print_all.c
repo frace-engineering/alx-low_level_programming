@@ -56,6 +56,7 @@ void printfloat(va_list ptr)
  * @format:pointer to string of characters
  * Return: void
  */
+
 void print_all(const char * const format, ...)
 {
 	unsigned int n, m;
@@ -63,14 +64,14 @@ void print_all(const char * const format, ...)
 	va_list ptr;
 
 
-	/**
-	 * struct form specifier - user defined structure
-	 */
+/**
+ * struct form - user defined structure
+ */
 	struct form specifier[] = {
 		{"i", printint},
 		{"c", printchar},
 		{"s", printstr},
-		{"f", printfloat}
+		{"f", printfloat},
 	};
 
 	n = 0;

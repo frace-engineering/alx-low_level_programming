@@ -4,7 +4,6 @@
 int sum_them_all(const unsigned int n, ...);
 void print_numbers(const char *separator, const unsigned int n, ...);
 void print_strings(const char *separator, const unsigned int n, ...);
-void print_all(const char * const format, ...);
 
 /**
  * struct form - user defined structure
@@ -14,9 +13,10 @@ void print_all(const char * const format, ...);
 struct form
 {
 	char *type;
-	void(*f)(va_list);
+	void (*f)(va_list);
 };
 
+void print_all(const char * const format, ...);
 void printstr(va_list ptr);
 void printchar(va_list ptr);
 void printfloat(va_list ptr);
