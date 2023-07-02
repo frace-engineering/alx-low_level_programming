@@ -1,9 +1,9 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include "calc.h"
+#include "3-calc.h"
 
 /**
- * @get_op_func: function pointer
+ * get_op_func - function pointer
  * @s: pointer to chracter array
  * Return: int
  */
@@ -22,10 +22,9 @@ int (*get_op_func(char *s))(int, int)
 	i = 0;
 	while (i < 5)
 	{
-		if(ops[i].op[0] == s[0])
+		if (ops[i].op[0] == s[0])
 			return (ops[i].f);
 		i++;
 	}
 	return ('\0');
 }
-

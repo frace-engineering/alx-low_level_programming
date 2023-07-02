@@ -1,6 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include "calc.h"
+#include "3-calc.h"
 
 
 /**
@@ -11,11 +11,11 @@
  */
 int op_add(int a, int b)
 {
-	return (A + b);
+	return (a + b);
 }
 
 /**
- * op_add - return the difference of 2 numbers
+ * op_sub - return the difference of 2 numbers
  * @a: first number
  * @b: second number
  * Return: a - b
