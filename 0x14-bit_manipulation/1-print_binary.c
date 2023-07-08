@@ -1,23 +1,6 @@
-#include <stdlib.h>
-#include <stdio.h>
 #include "main.h"
 
-/**
- * recursion - function that returns the value of x
- * raised to the power of y
- * @x: base number
- * @y: pow number
- * Return: int
- */
 
-int recursion(int x, int y)
-{
-	if (y < 0)
-		return (-1);
-	if (y == 0)
-		return (1);
-	return (x * recursion(x, y - 1));
-}
 
 /**
  * print_binary - function that prints the binary representation of a number
@@ -27,23 +10,24 @@ int recursion(int x, int y)
 
 void print_binary(unsigned long int n)
 {
-	unsigned int res_pow = 0;
-	int exp = 10;
+	int i;
 	int flag = 0;
 
 	if (n == 0)
 		_putchar('0');
-	while (exp >= 0)
+	i = 63;
+	while (i >= 0)
 	{
-		res_pow = recursion(2, exp);
-		if (n >= res_pow)
+		if ((n >> i) & 1)
 		{
-			_putchar('1');
-			n -= res_pow;
 			flag = 1;
+			_putchar('1');
 		}
-		else if (n < res_pow && flag == 1)
-			_putchar('0');
-		exp--;
+		else
+		{
+			if (flag)
+				_putchar('0');
+		}
+		i--;
 	}
 }
