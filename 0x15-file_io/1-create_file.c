@@ -36,13 +36,12 @@ int create_file(const char *filename, char *text_content)
 	fp = open(filename, O_RDWR | O_CREAT | O_TRUNC, 0600);
 	if (fp < 0)
 	{
-		write(STDOUT_FILENO, "File cannot be created", 23);
 		return (-1);
 	}
-	wrt = write(fp, text_content, len);
+	if (text_content != NULL)
+		wrt = write(fp, text_content, (len + 1));
 	if (wrt < 0)
 	{
-		write(STDOUT_FILENO, "write failed", 13);
 		return (-1);
 	}
 	close(fp);
