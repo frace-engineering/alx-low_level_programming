@@ -26,19 +26,15 @@ int append_text_to_file(const char *filename, char *text_content)
 	int fp, wrt, len;
 
 	len = 0;
-	if (filename == NULL)
-		return (0);
 	fp = open(filename, O_RDWR | O_CREAT | O_APPEND, 0664);
-	if (fp < 0)
+	if (fp == -1)
 	{
-		close(fp);
 		return (-1);
 	}
 	len = _len(text_content);
 	wrt = write(fp, text_content, len);
-	if (wrt < 0)
+	if (wrt == -1)
 	{
-		close(fp);
 		return (-1);
 	}
 	close(fp);
