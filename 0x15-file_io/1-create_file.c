@@ -33,16 +33,16 @@ int create_file(const char *filename, char *text_content)
 		return (-1);
 	len = _len(text_content);
 	fp = open(filename, O_RDWR | O_CREAT | O_TRUNC, 0600);
-	if (fp < 0)
+	if (fp == -1)
 	{
 		close(fp);
 		return (-1);
 	}
 	if (text_content != NULL)
 	{
-		wrt = write(fp, text_content, (len + 1));
+		wrt = write(fp, text_content, len);
 
-		if (wrt < 0)
+		if (wrt == -1 )
 		{
 			close(fp);
 			return (-1);
