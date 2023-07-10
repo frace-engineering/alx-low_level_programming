@@ -8,16 +8,15 @@
  *
  * Return: length of the string
  */
-int _len(char *s)
+int _len(const char *s)
 {
-	int i, count;
+	int i;
 
-	count = 0;
 	for (i = 0; s[i] != '\0'; i++)
 	{
-		count += 1;
+		;
 	}
-	return (count);
+	return (i);
 }
 /**
  * create_file - creates a file and write to it
@@ -36,6 +35,7 @@ int create_file(const char *filename, char *text_content)
 	fp = open(filename, O_RDWR | O_CREAT | O_TRUNC, 0600);
 	if (fp < 0)
 	{
+		close(fp);
 		return (-1);
 	}
 	if (text_content != NULL)
@@ -44,6 +44,7 @@ int create_file(const char *filename, char *text_content)
 
 		if (wrt < 0)
 		{
+			close(fp);
 			return (-1);
 		}
 	}
