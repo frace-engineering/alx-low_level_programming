@@ -38,8 +38,7 @@ int create_file(const char *filename, char *text_content)
 	{
 		return (-1);
 	}
-	if (text_content != NULL)
-		wrt = write(fp, text_content, (len + 1));
+	wrt = write(fp, text_content, (len + 1));
 	if (wrt < 0)
 	{
 		return (-1);
