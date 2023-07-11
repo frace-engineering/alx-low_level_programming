@@ -12,6 +12,8 @@ int _len(const char *s)
 {
 	int i;
 
+	if (s == NULL)
+		return (0);
 	for (i = 0; s[i] != '\0'; i++)
 	{
 		;
@@ -41,16 +43,6 @@ int create_file(const char *filename, char *text_content)
 	if (text_content != NULL)
 	{
 		wrt = write(fp, text_content, len);
-
-		if (wrt == -1)
-		{
-			close(fp);
-			return (-1);
-		}
-	}
-	else
-	{
-		wrt = write(fp, NULL, 0);
 
 		if (wrt == -1)
 		{
