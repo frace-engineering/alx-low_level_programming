@@ -11,7 +11,7 @@
 int main(int argc, char *argv[])
 {
 	char *buff;
-	int fp, fp1, fp_rd, fp_wrt;
+	int fp, fp1, fp_rd, fp_wrt, cf, cf1;
 
 	buff = malloc(sizeof(char) * 1024);
 	if (buff == NULL)
@@ -58,11 +58,9 @@ int main(int argc, char *argv[])
 		free(buff);
 		exit(98);
 	}
-	close(fp);
-	if (close(fp) < 0)
+	if ((cf = close(fp)) < 0)
 		dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", fp);
-	close(fp1);
-	if (close(fp1) < 0)
+	if ((cf1 = close(fp1)) < 0)
 		dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", fp1);
 	free(buff);
 	return (fp_wrt);
