@@ -12,6 +12,7 @@ int main(int argc, char *argv[])
 {
 	char *buff;
 	int fp, fp1, fp_rd, fp_wrt;
+
 	buff = malloc(sizeof(char) * 1024);
 	if (buff == NULL)
 		return (0);
@@ -33,6 +34,8 @@ int main(int argc, char *argv[])
 		dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", argv[1]);
 		free(buff);
 		close(fp);
+		if (close(fp) < 0)
+			dprintf(STDERR_FILENO, "Error: Can't close fd %d", fp);
 		exit(98);
 	}
 	fp1 = open(argv[2], O_RDWR | O_CREAT | O_TRUNC, 0664);
@@ -41,7 +44,11 @@ int main(int argc, char *argv[])
 		dprintf(STDERR_FILENO, "Error: Can't write to %s\n", argv[2]);
 		free(buff);
 		close(fp);
+		if (close(fp) < 0)
+			dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", fp);
 		close(fp1);
+		if (close(fp1) < 0)
+			dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", fp1);
 		exit(99);
 	}
 	while ((fp_rd = read(fp, buff, 1024)) > 0)
@@ -52,7 +59,11 @@ int main(int argc, char *argv[])
 			dprintf(STDERR_FILENO, "Error: Can't write to %s\n", argv[2]);
 			free(buff);
 			close(fp);
+			if (close(fp) < 0)
+				dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", fp);
 			close(fp1);
+			if (close(fp1) < 0)
+				dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", fp1);
 			exit(98);
 		}
 	}
@@ -61,10 +72,16 @@ int main(int argc, char *argv[])
 		dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", argv[1]);
 		free(buff);
 		close(fp);
+		if (close(fp) < 0)
+			dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", fp);
 		exit(98);
 	}
-	free(buff);
 	close(fp);
+	if (close(fp) < 0)
+		dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", fp);
 	close(fp1);
-	exit(fp_wrt);
+	if (close(fp1) < 0)
+		dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", fp1);
+	free(buff);
+	return (fp_wrt);
 }
